@@ -1,9 +1,13 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
   const [task, setTask] = useState('');
   const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    document.title = 'My To-Do List App'; // <-- This sets the page title
+  }, []);
 
   const addTask = () => {
     if (task.trim() !== '') {
